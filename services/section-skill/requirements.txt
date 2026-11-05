@@ -1,0 +1,12 @@
+azure-functions>=1.21,<2
+azure-identity>=1.24,<2
+azure-storage-blob>=12.24,<13
+httpx>=0.28,<1
+pydantic>=2.10,<3
+PyYAML>=6.0.2,<7
+filelock>=3.16,<4
+markdown-it-py>=3,<5
+networkx>=3.4,<4
+openai>=2.0,<3
+jsonschema>=4.23,<5
+tiktoken>=0.9,<1

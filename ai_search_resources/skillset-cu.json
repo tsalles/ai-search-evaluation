@@ -1,0 +1,116 @@
+{
+  "name": "my-skillset",
+  "description": "Extração, chunking semântico e embeddings de documentos brutos heterogêneos",
+  "skills": [
+    {
+      "@odata.type": "#Microsoft.Skills.Util.ContentUnderstandingSkill",
+      "name": "content-understanding",
+      "description": "Extrai e cria chunks semânticos preservando a estrutura documental",
+      "context": "/document",
+      "extractionOptions": [],
+      "inputs": [
+        {
+          "name": "file_data",
+          "source": "/document/file_data",
+          "inputs": []
+        }
+      ],
+      "outputs": [
+        {
+          "name": "text_sections",
+          "targetName": "text_sections"
+        }
+      ],
+      "chunkingProperties": {
+        "method": "semantic",
+        "unit": "tokens",
+        "maximumLength": 2000,
+        "overlapLength": 0
+      }
+    },
+    {
+      "@odata.type": "#Microsoft.Skills.Text.AzureOpenAIEmbeddingSkill",
+      "name": "generate-embeddings",
+      "description": "Gera embedding para cada chunk produzido pelo Content Understanding",
+      "context": "/document/text_sections/*",
+      "resourceUri": "https://example.services.ai.azure.com",
+      "deploymentId": "text-embedding-3-large",
+      "dimensions": 3072,
+      "modelName": "text-embedding-3-large",
+      "inputs": [
+        {
+          "name": "text",
+          "source": "/document/text_sections/*/content",
+          "inputs": []
+        }
+      ],
+      "outputs": [
+        {
+          "name": "embedding",
+          "targetName": "embedding"
+        }
+      ]
+    },
+    {
+      "@odata.type": "#Microsoft.Skills.Text.KeyPhraseExtractionSkill",
+      "name": "extract-keywords",
+      "context": "/document/text_sections/*",
+      "defaultLanguageCode": "pt",
+      "maxKeyPhraseCount": 10,
+      "inputs": [
+        {
+          "name": "text",
+          "source": "/document/text_sections/*/content"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "keyPhrases",
+          "targetName": "keywords"
+        }
+      ]
+    }
+  ],
+  "cognitiveServices": {
+    "@odata.type": "#Microsoft.Azure.Search.AIServicesByIdentity",
+    "subdomainUrl": "https://example.cognitiveservices.azure.com/"
+  },
+  "indexProjections": {
+    "selectors": [
+      {
+        "targetIndexName": "my-index",
+        "parentKeyFieldName": "parent_id",
+        "sourceContext": "/document/text_sections/*",
+        "mappings": [
+          {
+            "name": "content",
+            "source": "/document/text_sections/*/content",
+            "inputs": []
+          },
+          {
+            "name": "keywords",
+            "source": "/document/text_sections/*/keywords/*"
+          },
+          {
+            "name": "embedding",
+            "source": "/document/text_sections/*/embedding",
+            "inputs": []
+          },
+          {
+            "name": "document_title",
+            "source": "/document/metadata_storage_path",
+            "inputs": []
+          },
+          {
+            "name": "content_path",
+            "source": "/document/metadata_storage_path",
+            "inputs": []
+          }
+        ]
+      }
+    ],
+    "parameters": {
+      "projectionMode": "skipIndexingParentDocuments"
+    }
+  }
+}

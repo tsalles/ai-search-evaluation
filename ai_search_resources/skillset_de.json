@@ -1,0 +1,137 @@
+{
+  "name": "my-skillset-de",
+  "description": "Extração, chunking semântico e embeddings de documentos brutos heterogêneos",
+  "skills": [
+    {
+      "@odata.type": "#Microsoft.Skills.Util.DocumentExtractionSkill",
+      "name": "#1 Text Extraction",
+      "context": "/document",
+      "parsingMode": "default",
+      "dataToExtract": "contentAndMetadata",
+      "inputs": [
+        {
+          "name": "file_data",
+          "source": "/document/file_data",
+          "inputs": []
+        }
+      ],
+      "outputs": [
+        {
+          "name": "content",
+          "targetName": "extracted_content"
+        }
+      ],
+      "configuration": {
+        "imageAction": "none"
+      }
+    },
+    {
+      "@odata.type": "#Microsoft.Skills.Text.SplitSkill",
+      "name": "#2 Document Chunking",
+      "context": "/document",
+      "defaultLanguageCode": "pt-BR",
+      "textSplitMode": "pages",
+      "maximumPageLength": 2000,
+      "pageOverlapLength": 200,
+      "maximumPagesToTake": 0,
+      "unit": "characters",
+      "inputs": [
+        {
+          "name": "text",
+          "source": "/document/extracted_content",
+          "inputs": []
+        }
+      ],
+      "outputs": [
+        {
+          "name": "textItems",
+          "targetName": "pages"
+        }
+      ]
+    },
+    {
+      "@odata.type": "#Microsoft.Skills.Text.AzureOpenAIEmbeddingSkill",
+      "name": "generate-embeddings",
+      "description": "Gera embedding para cada chunk produzido pelo Text Split",
+      "context": "/document/pages/*",
+      "resourceUri": "https://example.services.ai.azure.com",
+      "deploymentId": "text-embedding-3-large",
+      "dimensions": 3072,
+      "modelName": "text-embedding-3-large",
+      "inputs": [
+        {
+          "name": "text",
+          "source": "/document/pages/*",
+          "inputs": []
+        }
+      ],
+      "outputs": [
+        {
+          "name": "embedding",
+          "targetName": "embedding"
+        }
+      ]
+    },
+    {
+        "@odata.type": "#Microsoft.Skills.Text.KeyPhraseExtractionSkill",
+        "name": "extract-keywords",
+        "context": "/document/pages/*",
+        "defaultLanguageCode": "pt",
+        "maxKeyPhraseCount": 10,
+        "inputs": [
+            {
+            "name": "text",
+            "source": "/document/pages/*"
+            }
+        ],
+        "outputs": [
+            {
+            "name": "keyPhrases",
+            "targetName": "keywords"
+            }
+        ]
+    }
+  ],
+  "cognitiveServices": {
+    "@odata.type": "#Microsoft.Azure.Search.AIServicesByIdentity",
+    "subdomainUrl": "https://example.cognitiveservices.azure.com/"
+  },
+  "indexProjections": {
+    "selectors": [
+      {
+        "targetIndexName": "my-index",
+        "parentKeyFieldName": "parent_id",
+        "sourceContext": "/document/pages/*",
+        "mappings": [
+          {
+            "name": "content",
+            "source": "/document/pages/*",
+            "inputs": []
+          },
+          {
+            "name": "keywords",
+            "source": "/document/pages/*/keywords/*"
+          },
+          {
+            "name": "embedding",
+            "source": "/document/pages/*/embedding",
+            "inputs": []
+          },
+          {
+            "name": "document_title",
+            "source": "/document/metadata_storage_path",
+            "inputs": []
+          },
+          {
+            "name": "content_path",
+            "source": "/document/metadata_storage_path",
+            "inputs": []
+          }
+        ]
+      }
+    ],
+    "parameters": {
+      "projectionMode": "skipIndexingParentDocuments"
+    }
+  }
+}

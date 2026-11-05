@@ -1,0 +1,19 @@
+{
+  "@odata.context": "https://ai-search-example.search.windows.net/$metadata#datasources/$entity",
+  "name": "docgen-datasource",
+  "description": null,
+  "type": "azureblob",
+  "subtype": null,
+  "indexerPermissionOptions": [],
+  "credentials": {
+    "connectionString": "ResourceId=/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/example/providers/Microsoft.Storage/storageAccounts/saexampledatasource;"
+  },
+  "container": {
+    "name": "container",
+    "query": "run-00000000000000000000000000000000"
+  },
+  "dataChangeDetectionPolicy": null,
+  "dataDeletionDetectionPolicy": null,
+  "encryptionKey": null,
+  "identity": null
+}

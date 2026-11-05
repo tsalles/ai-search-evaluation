@@ -1,0 +1,10 @@
+using './main.bicep'
+
+param location = 'eastus'
+param storageAccountName = 'saexampledatasource'
+param virtualNetworkPrefix = '10.100.0.0/24'
+param gatewaySubnetPrefix = '10.100.0.0/27'
+param privateEndpointSubnetPrefix = '10.100.0.32/27'
+param resolverSubnetPrefix = '10.100.0.64/28'
+param resolverInboundIp = '10.100.0.68'
+param vpnClientPool = '10.100.1.0/24'

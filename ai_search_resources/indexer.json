@@ -1,0 +1,19 @@
+{
+  "@odata.context": "https://ai-search-example.search.windows.net/$metadata#indexers/$entity",
+  "name": "docgen-indexer",
+  "description": null,
+  "dataSourceName": "docgen-datasource",
+  "skillsetName": "my-skillset-de",
+  "targetIndexName": "my-index",
+  "disabled": null,
+  "schedule": null,
+  "parameters": {
+    "configuration": {
+      "allowSkillsetToReadFileData": true
+    }
+  },
+  "fieldMappings": [],
+  "outputFieldMappings": [],
+  "cache": null,
+  "encryptionKey": null
+}

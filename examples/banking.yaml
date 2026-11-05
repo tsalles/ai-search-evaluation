@@ -1,0 +1,67 @@
+schema_version: "1"
+seed: 1729
+generation:
+  count: 12
+  language: pt
+  locale: pt-BR
+  audience: clientes de varejo de um banco ficticio
+  topics:
+    - id: bank-products
+      description: Produtos bancarios ficticios, condicoes e criterios de elegibilidade
+    - id: bank-procedures
+      description: Procedimentos bancarios ficticios, etapas e excecoes de atendimento
+  genre_weights:
+    explainer: 0.25
+    procedure: 0.25
+    faq: 0.25
+    comparison: 0.25
+  length_weights:
+    short: 0.30
+    medium: 0.50
+    long: 0.20
+  quality:
+    word_band_tolerance: 0.05
+  structure:
+    length_aware: true
+    complexity_weights:
+      simple: 0.30
+      moderate: 0.45
+      complex: 0.25
+  provider:
+    base_url: https://example.openai.azure.com/openai/v1/
+    deployment: gpt-6-luna
+    api: responses
+  limits:
+    concurrency: 2
+    request_timeout_seconds: 120
+    transport_attempts_per_candidate: 3
+    max_requests: 108
+    max_output_tokens_per_request: 8000
+    max_observed_total_tokens: 250000
+rendering:
+  weights:
+    pdf: 0.25
+    docx: 0.25
+    xlsx: 0.15
+    pptx: 0.15
+    html: 0.10
+    md: 0.10
+  allocation: stratified
+  layout_weights:
+    pdf:
+      single-column: 0.50
+      two-column: 0.50
+    docx:
+      single-column: 0.50
+      two-column: 0.50
+    xlsx:
+      compact: 0.50
+      sectioned: 0.50
+    pptx:
+      flow: 0.50
+      section-led: 0.50
+    html:
+      linear: 0.50
+      sectioned: 0.50
+    md:
+      semantic: 1.0
