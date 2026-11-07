@@ -1,0 +1,437 @@
+{
+  "schema_version": 1,
+  "status": "verified_local_export_and_restoration",
+  "clearance_scope": "Selected experimental assets and archive restoration. Repository source/history clearance is a separate review.",
+  "release_tag": "v0.1.0-experiments",
+  "manifest_path": "results/asset-manifest.json",
+  "manifest_sha256": "8e349ea9bcfedd9014d30d84e53647b59fc4da5d4db183182d91281718c59bdc",
+  "selected_inputs": {
+    "direct_files": 73385,
+    "direct_bytes": 11877863796,
+    "original_distribution_archives": 6,
+    "original_distribution_bytes": 1761835
+  },
+  "input_scope": {
+    "main_experimental_files": 63403,
+    "main_experimental_bytes": 8883508047,
+    "external_frozen_evidence_files": 9909,
+    "external_frozen_evidence_bytes": 2993493627,
+    "external_producer_scripts": 73,
+    "external_producer_bytes": 862122,
+    "expanded_distribution_members": 556,
+    "distinct_direct_source_sha256_and_format_pairs": 11736
+  },
+  "source_integrity": {
+    "main_historical_sha256_multiset_matches_original_inventory": true,
+    "main_historical_files_compared": 63403,
+    "unchanged_files_with_equal_original_and_public_sha256": 59016,
+    "public_derivatives_with_distinct_checksums": 14925,
+    "direct_source_hashes_rechecked_during_final_resume": 73385,
+    "manifest_paths_are_relative": true
+  },
+  "physical_output_files": 73941,
+  "physical_output_bytes": 12282355075,
+  "physical_namespace_file_counts": {
+    "evaluations": 63210,
+    "runs": 193,
+    "study-assets": 10538
+  },
+  "physical_namespace_bytes": {
+    "evaluations": 9182335896,
+    "runs": 2847993,
+    "study-assets": 3097171186
+  },
+  "physical_format_file_counts": {
+    ".docx": 3303,
+    ".example": 3,
+    ".gitignore": 3,
+    ".html": 3297,
+    ".json": 53250,
+    ".lock": 3,
+    ".log": 1,
+    ".md": 3430,
+    ".pdf": 3282,
+    ".pptx": 3264,
+    ".ps1": 8,
+    ".py": 531,
+    ".sqlite3": 90,
+    ".toml": 3,
+    ".trec": 146,
+    ".txt": 3,
+    ".typed": 3,
+    ".xlsx": 3299,
+    ".yaml": 8,
+    ".zip": 2,
+    "METADATA": 3,
+    "PKG-INFO": 3,
+    "RECORD": 3,
+    "WHEEL": 3
+  },
+  "physical_format_status_counts": {
+    ".docx": {
+      "public_derivative": 3303
+    },
+    ".example": {
+      "unchanged": 3
+    },
+    ".gitignore": {
+      "unchanged": 3
+    },
+    ".html": {
+      "unchanged": 3297
+    },
+    ".json": {
+      "public_derivative": 1481,
+      "unchanged": 51769
+    },
+    ".lock": {
+      "unchanged": 3
+    },
+    ".log": {
+      "unchanged": 1
+    },
+    ".md": {
+      "unchanged": 3357,
+      "public_derivative": 73
+    },
+    ".pdf": {
+      "public_derivative": 3282
+    },
+    ".pptx": {
+      "public_derivative": 3264
+    },
+    ".ps1": {
+      "unchanged": 6,
+      "public_derivative": 2
+    },
+    ".py": {
+      "public_derivative": 115,
+      "unchanged": 416
+    },
+    ".sqlite3": {
+      "public_derivative": 90
+    },
+    ".toml": {
+      "unchanged": 3
+    },
+    ".trec": {
+      "unchanged": 146
+    },
+    ".txt": {
+      "unchanged": 3
+    },
+    ".typed": {
+      "unchanged": 3
+    },
+    ".xlsx": {
+      "public_derivative": 3299
+    },
+    ".yaml": {
+      "public_derivative": 8
+    },
+    ".zip": {
+      "public_derivative": 2
+    },
+    "METADATA": {
+      "public_derivative": 3
+    },
+    "PKG-INFO": {
+      "public_derivative": 3
+    },
+    "RECORD": {
+      "unchanged": 3
+    },
+    "WHEEL": {
+      "unchanged": 3
+    }
+  },
+  "recursive_format_occurrences": {
+    ".sqlite3": 90,
+    ".trec": 146,
+    ".json": 53250,
+    ".zip": 2,
+    ".xlsx": 3631,
+    ".md": 3762,
+    ".pptx": 3596,
+    ".bin": 3596,
+    ".html": 3629,
+    ".docx": 3635,
+    ".pdf": 3614,
+    ".py": 531,
+    ".ps1": 8,
+    ".yaml": 8,
+    ".log": 1,
+    "METADATA": 3,
+    "WHEEL": 3,
+    ".txt": 3,
+    "RECORD": 3,
+    ".example": 3,
+    ".lock": 3,
+    ".typed": 3,
+    ".gitignore": 3,
+    ".toml": 3,
+    "PKG-INFO": 3
+  },
+  "numeric_invariants": {
+    "json_documents": 838345,
+    "json_numeric_and_null_values": 143781494,
+    "sqlite_rows": 1194492,
+    "xml_numeric_nodes": 289777,
+    "xml_numeric_attributes": 42486257,
+    "unchanged_files": 59016,
+    "public_derivatives": 14925
+  },
+  "processing_counters": {
+    "database_text_cells": 2866002,
+    "database_json_blobs": 785095,
+    "database_numeric_or_null_cells": 1119358,
+    "database_integrity_checks": 90,
+    "format:.sqlite3": 90,
+    "rebuilt_databases": 90,
+    "distinct_transformed_source_contents": 11736,
+    "source_files": 73385,
+    "format:.trec": 146,
+    "validated_numeric_text_files": 154,
+    "plain_text_numeric_tokens": 71399522,
+    "reused_emitted_source_contents": 61649,
+    "format:.json": 53250,
+    "distinct_cached_source_contents": 11455,
+    "format:.zip": 2,
+    "format:.xlsx": 3631,
+    "xml_documents": 286390,
+    "office_xml_parts": 279198,
+    "format:.md": 3762,
+    "format:.pptx": 3596,
+    "format:.bin": 3596,
+    "printer_metadata_sections": 7192,
+    "printer_metadata_numeric_values": 169012,
+    "validated_printer_metadata": 3596,
+    "removed_standard_thumbnails": 7231,
+    "format:.html": 3629,
+    "format:.docx": 3635,
+    "format:.pdf": 3614,
+    "pdf_content_streams": 6086,
+    "validated_truetype_tables": 73606,
+    "pdf_truetype_fonts": 5662,
+    "pdf_unicode_maps": 5662,
+    "pdf_indirect_objects": 48975,
+    "distinct_pdf_contents": 580,
+    "format:.py": 531,
+    "validated_python_sources": 531,
+    "python_numeric_and_null_constants": 22054,
+    "format:.ps1": 8,
+    "format:.yaml": 8,
+    "classified_sqlite_overflow_endpoint_fragments": 35,
+    "verified_database_files": 90,
+    "verified_export_files": 73941,
+    "verified_final_archive_files": 73941,
+    "format:.log": 1,
+    "format:METADATA": 3,
+    "expanded_distribution_members": 556,
+    "format:WHEEL": 3,
+    "format:.txt": 3,
+    "format:RECORD": 3,
+    "format:.example": 3,
+    "format:.lock": 3,
+    "reused_identical_source_contents": 342,
+    "format:.typed": 3,
+    "format:.gitignore": 3,
+    "format:.toml": 3,
+    "format:PKG-INFO": 3
+  },
+  "counter_semantics": {
+    "physical_counts": "Manifest members only; their sum is 73941.",
+    "recursive_formats": "Includes members inside the two preserved nested ZIP files; do not sum these as physical output files.",
+    "numeric_invariants": "Before/after values and order/shape were compared for each logical file instance, including byte-identical copies.",
+    "distinct_pdf_contents": "Exporter counter is the sum of partition-local processing cache misses, not a global unique-content count."
+  },
+  "pdf_coverage": {
+    "physical_files": 3282,
+    "including_nested_files": 3614,
+    "globally_distinct_emitted_pdf_sha256_values": 415,
+    "inspection": "Strict pypdf parsing of all logical PDFs, body text, metadata, indirect objects and decoded streams; bounded TrueType fonts and Adobe Unicode maps classified separately."
+  },
+  "image_coverage": {
+    "standard_thumbnail_metadata_instances_removed": 7231,
+    "removed_standard_thumbnail_sha256_counts": {
+      "116f9aa8ea038e39ef47ee99a23592ab569cf77feafecd0a30e222369e931d25": 3596,
+      "96367138dc44ce09bf2c8f0f8e49348a1478d2c5c0af69bbc2bbc38b63cdcead": 3635
+    },
+    "retained_content_images": 0,
+    "visual_or_ocr_clearance_claimed": false,
+    "limitations": "Only explicitly approved image hashes allowed; standard thumbnail metadata removed. No OCR claim. Unknown images block export."
+  },
+  "archives": [
+    {
+      "name": "experiments-001.zip",
+      "bytes": 273607980,
+      "sha256": "0dea94fbbdb73e8afaf5cb4f06248c6319b0b210837c7932b3c108e96d075ac5",
+      "files": 13799,
+      "url": "https://github.com/tsalles/ai-search-evaluation/releases/download/v0.1.0-experiments/experiments-001.zip"
+    },
+    {
+      "name": "experiments-002.zip",
+      "bytes": 304100502,
+      "sha256": "0bb2fcddb28f95b3e4a1bcf12abd8d2f6e2d766bc39ad83841c25a08198db6b1",
+      "files": 11447,
+      "url": "https://github.com/tsalles/ai-search-evaluation/releases/download/v0.1.0-experiments/experiments-002.zip"
+    },
+    {
+      "name": "experiments-003.zip",
+      "bytes": 267679012,
+      "sha256": "0d9b487e9b6c8e76d6e8eb81d8a10bc85190246d85de40381895d2039853b5b1",
+      "files": 8130,
+      "url": "https://github.com/tsalles/ai-search-evaluation/releases/download/v0.1.0-experiments/experiments-003.zip"
+    },
+    {
+      "name": "experiments-004.zip",
+      "bytes": 145617643,
+      "sha256": "aa21f9cce95c564a3dc96d8ca961ba5b7134db018f1d20c044d5f3ea8ef4d87f",
+      "files": 3324,
+      "url": "https://github.com/tsalles/ai-search-evaluation/releases/download/v0.1.0-experiments/experiments-004.zip"
+    },
+    {
+      "name": "experiments-005.zip",
+      "bytes": 295724445,
+      "sha256": "23c1c1f60465f279a1625de40ffc3afbd375492b07529276d9db86a9b9f90c78",
+      "files": 10075,
+      "url": "https://github.com/tsalles/ai-search-evaluation/releases/download/v0.1.0-experiments/experiments-005.zip"
+    },
+    {
+      "name": "experiments-006.zip",
+      "bytes": 263034957,
+      "sha256": "ef72246e4b56e70849898d754c90d6334483f835a6cc7f0d8a0ed70fd1f44ff9",
+      "files": 12967,
+      "url": "https://github.com/tsalles/ai-search-evaluation/releases/download/v0.1.0-experiments/experiments-006.zip"
+    },
+    {
+      "name": "experiments-007.zip",
+      "bytes": 221710725,
+      "sha256": "94069b163c8bd34a8a546682a8a0538906ea65c866a01faa16e5da5363456700",
+      "files": 9220,
+      "url": "https://github.com/tsalles/ai-search-evaluation/releases/download/v0.1.0-experiments/experiments-007.zip"
+    },
+    {
+      "name": "experiments-008.zip",
+      "bytes": 141753579,
+      "sha256": "9bd60f976d112eb41de9d58bd3db0c93dbb1cb730b96e457b73406e4e6707ae6",
+      "files": 4979,
+      "url": "https://github.com/tsalles/ai-search-evaluation/releases/download/v0.1.0-experiments/experiments-008.zip"
+    }
+  ],
+  "archive_count": 8,
+  "archive_total_bytes": 1913228843,
+  "largest_archive_bytes": 304100502,
+  "archive_size_limit_bytes_exclusive": 1800000000,
+  "restoration": {
+    "verified_archives": 8,
+    "verified_files": 73941,
+    "extracted": true,
+    "exact_relative_path_set_matches_manifest": true,
+    "all_restored_sizes_match_manifest": true,
+    "all_extracted_file_sha256_values_checked_by_independent_helper": true,
+    "relative_path_set_sha256": "a076eadc9115394b8f3f99459d2dd59d682e6d6dfc250f5d6983872455ba62f4",
+    "restored_bytes": 12282355075,
+    "network_download_requested": false
+  },
+  "exclusions": [
+    {
+      "path": "study-assets/frozen-dependencies/decision-delivery-dist/synthetic_document_generator-0.1.0-py3-none-any.whl",
+      "reason": "Original built distribution excluded; sanitized frozen source and dependency declarations expanded separately."
+    },
+    {
+      "path": "study-assets/frozen-dependencies/decision-delivery-dist/synthetic_document_generator-0.1.0.tar.gz",
+      "reason": "Original built distribution excluded; sanitized frozen source and dependency declarations expanded separately."
+    },
+    {
+      "path": "study-assets/frozen-dependencies/index-epochs-final-dist/synthetic_document_generator-0.1.0-py3-none-any.whl",
+      "reason": "Original built distribution excluded; sanitized frozen source and dependency declarations expanded separately."
+    },
+    {
+      "path": "study-assets/frozen-dependencies/index-epochs-final-dist/synthetic_document_generator-0.1.0.tar.gz",
+      "reason": "Original built distribution excluded; sanitized frozen source and dependency declarations expanded separately."
+    },
+    {
+      "path": "study-assets/frozen-dependencies/index-tuning-dist/synthetic_document_generator-0.1.0-py3-none-any.whl",
+      "reason": "Original built distribution excluded; sanitized frozen source and dependency declarations expanded separately."
+    },
+    {
+      "path": "study-assets/frozen-dependencies/index-tuning-dist/synthetic_document_generator-0.1.0.tar.gz",
+      "reason": "Original built distribution excluded; sanitized frozen source and dependency declarations expanded separately."
+    }
+  ],
+  "historical_seal_semantics": "All embedded legacy hashes, seals, RECORD entries and signature claims are historical opaque identifiers, not verification of public bytes. Only this manifest's sha256 fields verify the public derivative.",
+  "producer_version_caveat": {
+    "path": "evaluations/saas-confirmation-study/study-0e518aae/search-validation-proof-v2.json",
+    "status": "unresolved_historical_producer_version",
+    "description": "The recorded independent_saas_audit.py hash differs from the available producer. No historical reproducibility claim is made."
+  },
+  "unresolved_confidentiality_blockers": [],
+  "reproducibility_limitations": [
+    "Historical producer version mismatch remains unresolved; public derivatives do not validate historical seals or establish turnkey replay."
+  ],
+  "earlier_uncleared_attempts": [
+    {
+      "attempt": "sequential-v1",
+      "outcome": "Interrupted without clearance."
+    },
+    {
+      "attempt": "client-boundary-v2",
+      "outcome": "Blocked on an ordinary-word substring false positive; lexical and CamelCase boundaries corrected and regression-tested."
+    },
+    {
+      "attempt": "sqlite-framing-v3",
+      "outcome": "Blocked on verified public-host suffix fragments at SQLite overflow boundaries; structural classifier corrected."
+    },
+    {
+      "attempt": "parallel-v4",
+      "outcome": "Transformation and packing completed; slow final validation interrupted for bounded policy-sensitive successful-audit reuse."
+    },
+    {
+      "attempt": "verification-v5",
+      "outcome": "Blocked on a validated numeric overflow-pointer byte joined to text; framing corrected, actual database rechecked, and regression-tested."
+    },
+    {
+      "attempt": "verification-v6",
+      "outcome": "All 73941 final compressed members passed recursive confidentiality and integrity assessment; all 90 rebuilt databases passed."
+    }
+  ],
+  "resolved_format_classification_work": [
+    "Framed Office printer plists",
+    "Declared PDF fonts and Unicode maps",
+    "AST-proven Python credential references",
+    "Narrow declared UTF-16 fixtures",
+    "Strict nested ZIP framing"
+  ],
+  "validation": {
+    "release_regression_tests_passed": 62,
+    "ruff": "passed",
+    "mypy": "passed for three release scripts",
+    "editor_diagnostics": "none"
+  },
+  "toolchain": {
+    "python": "3.12.10",
+    "sqlite": "3.49.1",
+    "pypdf": "6.21.0",
+    "pytest": "8.4.2",
+    "ruff": "0.17.1",
+    "mypy": "1.20.2"
+  },
+  "public_tooling_sha256": {
+    "scripts/public_asset_release.py": "67ac9056178f4a8271e44bc8c314a7536813143157e13df543bf9df1dcd56f0c",
+    "scripts/experimental_assets.py": "e476054b8103f02f9fca3946c10ffb451fb9896b3683bd5462b5f4e80c38ae2b",
+    "scripts/summarize_experiment_release.py": "a26e4d26e64e9af99fd7fdc254f3c9b698b295256872e1d4e2657cdcc3fb5bc8",
+    "tests/test_public_asset_release.py": "abef357933d680dd9d51372f11ca451c5c152bdecce1c6ba51645b6f7e1d76f0"
+  },
+  "numerical_review_report_sha256": "d517ed7cec44393f9f585fef7ac8441dd61e08e1705a080771017289d8180101",
+  "historical_package_correspondence_report_sha256": "6e55daa00ba50c3df2777c57ee042834c0f6f5da5e4c457a902f66720a3caf28",
+  "operations": {
+    "asset_uploads": 0,
+    "asset_network_downloads": 0,
+    "git_commits": 0,
+    "git_pushes": 0,
+    "study_producer_executions": 0,
+    "model_requests": 0,
+    "original_source_modifications": 0
+  }
+}

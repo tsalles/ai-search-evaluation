@@ -1,0 +1,24 @@
+{
+  "status": "local_byte_comparison_complete",
+  "comparison": "Every original wheel package member was compared byte-for-byte with its matching original sdist src member before expansion. These are historical input comparisons, not public output checksums.",
+  "packages": [
+    {
+      "category": "decision-delivery-dist",
+      "wheel_package_members": 79,
+      "matching_sdist_members": 79,
+      "mismatches": 0
+    },
+    {
+      "category": "index-epochs-final-dist",
+      "wheel_package_members": 79,
+      "matching_sdist_members": 79,
+      "mismatches": 0
+    },
+    {
+      "category": "index-tuning-dist",
+      "wheel_package_members": 79,
+      "matching_sdist_members": 79,
+      "mismatches": 0
+    }
+  ]
+}

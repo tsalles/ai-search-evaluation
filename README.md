@@ -12,11 +12,22 @@ Generate controlled synthetic document corpora for comparing retrieval across PD
 This copy contains the current source, tests, and documentation with sanitized deployment examples.
 
 - Azure account names, endpoints, subscription identifiers, and private network addresses are examples. Replace them with your own configuration before authorizing any live command or deployment.
-- Local Azure planning exports, environment files, generated corpora, evaluation databases, and customer-provided documents are excluded.
+- Local Azure planning exports, environment files, and customer-provided documents are excluded. The complete anonymized experimental assets are distributed separately as [verified release archives](PUBLIC-DATA.md).
 - Historical experiment reports retain their recorded synthetic-corpus results. Deployment aliases are sanitized, and links to ignored local evidence require the original private workspace.
 - The public repository starts with fresh history. Previous commits, personal Git author metadata, and private agent snapshot refs are not included.
 
 Keep local credentials and generated Office/PDF files excluded by the ignore rules. Publish this repository's `main` branch rather than mirroring the original private repository.
+
+## Experimental assets and results
+
+The [experimental data guide](PUBLIC-DATA.md) describes the complete anonymized release,
+including synthetic native documents, references, qrels, rankings, numerical results,
+reconstructed databases, study scripts, and frozen evidence.
+Download the eight archives from the [experimental release](https://github.com/tsalles/ai-search-evaluation/releases/tag/v0.1.0-experiments)
+and verify them with the committed [asset manifest](results/asset-manifest.json).
+
+Public derivatives have separate checksums. Historical seals do not verify changed
+public bytes; the guide records the unresolved historical producer-version limitation.
 
 ## Capabilities
 

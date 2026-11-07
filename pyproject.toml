@@ -68,6 +68,7 @@ only-include = [
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+pythonpath = ["src", "scripts"]
 addopts = "-ra -m 'not live'"
 markers = ["live: explicitly opted-in paid Azure tests"]
 
