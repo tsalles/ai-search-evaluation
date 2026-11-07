@@ -902,7 +902,10 @@ def test_removes_approved_thumbnail_with_valid_relationship_updates() -> None:
         assert b"thumbnail" not in archive.read("[Content_Types].xml")
 
 
-def test_end_to_end_offline_pack_verify_and_extract(tmp_path: Path) -> None:
+@pytest.mark.parametrize("existing_checkout", [False, True])
+def test_end_to_end_offline_pack_verify_and_extract(
+    tmp_path: Path, existing_checkout: bool,
+) -> None:
     source = tmp_path / "source.json"
     source.write_text('{"metric": 0.5, "seed": 19}', encoding="utf-8")
     output = tmp_path / "release"
@@ -922,8 +925,15 @@ def test_end_to_end_offline_pack_verify_and_extract(tmp_path: Path) -> None:
         encoding="utf-8",
     )
     extracted = tmp_path / "extracted"
+    index = extracted / "evaluations" / "README.md"
+    index_content = "# Evaluation release index\n"
+    if existing_checkout:
+        index.parent.mkdir(parents=True)
+        index.write_text(index_content, encoding="utf-8")
     release_assets(manifest, output, download=False, extract=extracted)
     assert (extracted / "evaluations/study/metrics.json").read_bytes() == source.read_bytes()
+    if existing_checkout:
+        assert index.read_text(encoding="utf-8") == index_content
     assert file_hash(source) == exporter.entries[0]["sha256"]
     with pytest.raises(ReleaseError, match="overwrite"):
         extract_archive(output / archives[0]["name"], extracted, exporter.entries)

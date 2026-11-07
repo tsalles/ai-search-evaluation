@@ -31,9 +31,39 @@ Download URLs use
 No command downloads implicitly. Extraction rejects traversal, links, duplicate members,
 unexpected members, checksum mismatches, and overwriting existing files. Every archive
 contains complete files, with exact member mapping in the manifest. Restore all archives
-to the same empty destination to recover `evaluations\`, `runs\`, and `study-assets\`.
+to an empty data destination to recover `evaluations\`, `runs\`, and `study-assets\`.
 Optional `--workers 1` through `--workers 4` bounds concurrent archive verification and
 extraction; all archives pass verification before any extraction begins.
+
+The tracked [evaluations index](evaluations/README.md) lists all evaluation groups
+and their archives. To restore into a fresh source checkout instead of a separate
+data directory, run:
+
+```powershell
+python .\scripts\experimental_assets.py `
+  --cache ..\ai-search-evaluation-cache --download --extract . --workers 4
+```
+
+The index remains tracked; restored evaluation payloads, runs, and study assets stay
+ignored. A checkout must not already contain files being restored. The helper refuses
+to overwrite existing release files.
+
+## Release strategy
+
+- Keep source, the visible evaluation index, review reports, and the public manifest
+  in Git. Keep bulky datasets and databases in compressed GitHub release assets.
+- Give each dataset snapshot a new versioned tag, such as `v0.1.1-experiments`.
+  Preserve published snapshots; do not overwrite their archives or move their tags.
+- Before a new snapshot, run the confidentiality export, preserve numerical invariants,
+  and verify every compressed member and a complete restoration. Retain the historical
+  producer and seal limitations.
+- Update the manifest, archive checksums, evaluation index, and helper's pinned release
+  URL together. Commit them and tag the exact source revision used for the release.
+- Upload independently extractable ZIPs below the exporter's 1.8 GB per-archive limit
+  to a draft release. Compare GitHub's uploaded sizes and SHA256 digests with the
+  committed manifest before publishing.
+- After publication, verify anonymous download and checksum validation. Existing users
+  can keep the earlier tag and its matching manifest to retain their chosen snapshot.
 
 ## Numerical review reports
 

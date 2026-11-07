@@ -10,7 +10,9 @@ htmlcov/
 dist/
 *.egg-info/
 runs/
-evaluations/
+/evaluations/*
+!/evaluations/README.md
+/study-assets/
 qa-output/
 .env
 .env.*

@@ -13,7 +13,7 @@ This copy contains the current source, tests, and documentation with sanitized d
 
 - Azure account names, endpoints, subscription identifiers, and private network addresses are examples. Replace them with your own configuration before authorizing any live command or deployment.
 - Local Azure planning exports, environment files, and customer-provided documents are excluded. The complete anonymized experimental assets are distributed separately as [verified release archives](PUBLIC-DATA.md).
-- Historical experiment reports retain their recorded synthetic-corpus results. Deployment aliases are sanitized, and links to ignored local evidence require the original private workspace.
+- Historical experiment reports retain their recorded synthetic-corpus results. Deployment aliases are sanitized; restore the public release to inspect the distributed evidence.
 - The public repository starts with fresh history. Previous commits, personal Git author metadata, and private agent snapshot refs are not included.
 
 Keep local credentials and generated Office/PDF files excluded by the ignore rules. Publish this repository's `main` branch rather than mirroring the original private repository.
@@ -23,6 +23,8 @@ Keep local credentials and generated Office/PDF files excluded by the ignore rul
 The [experimental data guide](PUBLIC-DATA.md) describes the complete anonymized release,
 including synthetic native documents, references, qrels, rankings, numerical results,
 reconstructed databases, study scripts, and frozen evidence.
+The tracked [evaluations index](evaluations/README.md) lists every evaluation group,
+its archive locations, and commands to restore the full folder into a checkout.
 Download the eight archives from the [experimental release](https://github.com/tsalles/ai-search-evaluation/releases/tag/v0.1.0-experiments)
 and verify them with the committed [asset manifest](results/asset-manifest.json).
 
